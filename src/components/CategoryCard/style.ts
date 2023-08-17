@@ -3,21 +3,13 @@ import { styled } from "styled-components";
 export const CategoryCardContainer = styled.div`
   width: 100%;
   display: flex;
-  justify-content: center;
-  gap: 2rem;
-
-  @media screen and (min-width: 1024px) {
-    width: 24%;
-  }
-
-  @media screen and (min-width: 580px) and (max-width: 1024px) {
-    width: 49%;
-  }
+  gap: 1.5rem;
 `;
 
-export const ImageContainer = styled.div`
-  width: 2.5rem;
-  height: 2.5rem;
+export const ImageContainer = styled.img`
+  width: 2.625rem;
+  height: 2.625rem;
+  object-fit: contain;
 `;
 
 export const CardTitle = styled.h4`

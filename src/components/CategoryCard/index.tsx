@@ -5,7 +5,6 @@ import {
   CategoryCardContainer,
   ImageContainer,
 } from "./style";
-import { Image } from "@mantine/core";
 
 interface CategoryCardProps {
   categoryImage: string;
@@ -20,9 +19,7 @@ const CategoryCard: FC<CategoryCardProps> = ({
 }) => {
   return (
     <CategoryCardContainer>
-      <ImageContainer>
-        <Image src={categoryImage} w="100%" h="auto" />
-      </ImageContainer>
+      <ImageContainer src={categoryImage} />
 
       <div>
         <CardTitle>{title}</CardTitle>

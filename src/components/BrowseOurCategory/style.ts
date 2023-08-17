@@ -22,11 +22,3 @@ export const MainTitle = styled.h3`
     text-align: left;
   }
 `;
-
-export const CatagoriesContainer = styled.div`
-  @media screen and (min-width: 580px) {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.25rem;
-  }
-`;
