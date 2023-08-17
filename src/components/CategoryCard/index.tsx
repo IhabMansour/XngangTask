@@ -5,21 +5,12 @@ import {
   CategoryCardContainer,
   ImageContainer,
 } from "./style";
+import { CategoryProps } from "../../interfaces";
 
-interface CategoryCardProps {
-  categoryImage: string;
-  title: string;
-  description: string;
-}
-
-const CategoryCard: FC<CategoryCardProps> = ({
-  categoryImage,
-  title,
-  description,
-}) => {
+const CategoryCard: FC<CategoryProps> = ({ image, title, description }) => {
   return (
     <CategoryCardContainer>
-      <ImageContainer src={categoryImage} />
+      <ImageContainer src={image} />
 
       <div>
         <CardTitle>{title}</CardTitle>

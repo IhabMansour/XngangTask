@@ -2,24 +2,16 @@ import { FC, useEffect, useState } from "react";
 import { Grid } from "@mantine/core";
 import CategoryCard from "../CategoryCard";
 import { BrowseOurCategoryContainer, MainTitle } from "./style";
-
-interface CategoryProps {
-  categoryID: number;
-  title: string;
-  description: string;
-  image: string;
-}
+import { CategoryProps } from "../../interfaces";
+import { getDataByParam } from "../../services";
 
 const BrowseOurCategory: FC = () => {
-  const [categoriesData, setCategoriesData] = useState([]);
-
-  const getData = () =>
-    fetch("http://localhost:3000/categories")
-      .then((res) => res.json())
-      .then((data) => setCategoriesData(data));
+  const [categoriesData, setCategoriesData] = useState<CategoryProps[]>([]);
 
   useEffect(() => {
-    getData();
+    getDataByParam("categories").then((data) => {
+      setCategoriesData(data);
+    });
   }, []);
 
   return (
@@ -28,13 +20,13 @@ const BrowseOurCategory: FC = () => {
         Browse <span>our most popular category</span>
       </MainTitle>
       <Grid>
-        {categoriesData?.map((category: CategoryProps) => (
+        {categoriesData?.map((category) => (
           <Grid.Col md={6} lg={3}>
             <CategoryCard
-              key={category.categoryID}
+              key={category.id}
               title={category.title}
               description={category.description}
-              categoryImage={category.image}
+              image={category.image}
             />
           </Grid.Col>
         ))}

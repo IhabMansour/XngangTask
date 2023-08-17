@@ -43,16 +43,17 @@ export const HeaderTitle = styled.h1`
 export const HeaderContent = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 0 1rem;
 
-  @media screen and (max-width: 768px) {
-    justify-content: center;
+  @media screen and (min-width: 768px) {
+    justify-content: space-between;
+    padding: 0 1rem 0 0;
   }
 `;
 
-export const DesktopMainTabs = styled.div`
+export const DesktopMainTabs = styled.nav`
   display: flex;
   gap: 1rem;
 
