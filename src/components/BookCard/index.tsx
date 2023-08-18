@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { BookCardContainer, BookDetails, BookTitle, ImageCard } from "./style";
-import { BookProps } from "@interfaces/index";
+import { BookProps } from "@/interfaces/index";
 
 const BookCard: FC<BookProps> = ({
   id,
