@@ -1,30 +1,39 @@
 import "./App.css";
-import BrowseOurCategory from "./components/BrowseOurCategory";
-import Children from "./components/Children";
-import Fiction from "./components/Fiction";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Nonfiction from "./components/Nonfiction";
-import SelfImprovement from "./components/SelfImprovement";
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
+import RootLayout from "./layouts/RootLayout";
+import Home from "./pages/Home";
+import Books from "./pages/Books";
+import BookDetails from "./pages/BookDetails";
+import NotCreatedYet from "./pages/NotCreatedYet";
+import { useState } from "react";
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<RootLayout />}>
+      <Route index element={<Home />} />
+      <Route path="books" element={<Books />} />
+      <Route path="books/:id" element={<BookDetails />} />
+      <Route path="*" element={<NotCreatedYet />} />
+    </Route>
+  )
+);
 
 function App() {
-  return (
-    <div className="App">
-      <Header />
+  const [loading, setLoading] = useState(true);
+  const spinner = document.getElementById("spinner");
+  if (spinner) {
+    setTimeout(() => {
+      spinner.style.display = "none";
+      setLoading(false);
+    }, 1500);
+  }
 
-      <BrowseOurCategory />
-
-      <Nonfiction />
-
-      <Fiction />
-
-      <Children />
-
-      <SelfImprovement />
-
-      <Footer />
-    </div>
-  );
+  return !loading ? <RouterProvider router={router} /> : <></>;
 }
 
 export default App;

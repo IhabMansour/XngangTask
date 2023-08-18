@@ -1,6 +1,7 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { Menu } from "@mantine/core";
 import { Search, Menu2, CaretDown } from "tabler-icons-react";
+import { useLocation } from "react-router-dom";
 
 import {
   DesktopMainTabs,
@@ -16,12 +17,13 @@ import {
 import { PAGES } from "../../constants";
 
 const Header: FC = () => {
+  let location = useLocation();
   const [opened, setOpened] = useState<boolean>(false);
-  const [currentUrl] = useState<string>(window.location.pathname);
+  const [currentUrl, setCurrentUrl] = useState<string>(location.pathname);
 
-  const handleChangeUrl = (urlLink: string) => {
-    window.location.href = urlLink;
-  };
+  useEffect(() => {
+    setCurrentUrl(location.pathname);
+  }, [location]);
 
   return (
     <HeaderContainer>
@@ -35,11 +37,13 @@ const Header: FC = () => {
 
           <Menu.Dropdown>
             {PAGES.map((item) => (
-              <Menu.Item
-                key={item.menuID}
-                style={{ textTransform: "uppercase" }}
-                onClick={() => handleChangeUrl(item.menuLink)}>
-                {item.label}
+              <Menu.Item key={item.menuID}>
+                <MainTab
+                  isMobile
+                  selectedTab={currentUrl === item.menuLink}
+                  to={item.menuLink}>
+                  {item.label}
+                </MainTab>
               </Menu.Item>
             ))}
           </Menu.Dropdown>
@@ -57,7 +61,7 @@ const Header: FC = () => {
               <MainTab
                 key={item.menuID}
                 selectedTab={currentUrl === item.menuLink}
-                onClick={() => handleChangeUrl(item.menuLink)}>
+                to={item.menuLink}>
                 {item.label}
               </MainTab>
 

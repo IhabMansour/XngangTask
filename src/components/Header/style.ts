@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { NavLink } from "react-router-dom";
 
 export const HeaderContainer = styled.header`
   background: #89c33c;
@@ -64,15 +65,25 @@ export const DesktopMainTabs = styled.nav`
 
 export const MainTabContainer = styled.div`
   display: flex;
+  align-items: center;
+  gap: 0.5rem;
 `;
 
-export const MainTab = styled.button<{ selectedTab: boolean }>`
-  background: transparent;
-  border: none;
-  color: ${(props) => (props.selectedTab ? "#000000" : "#FFFFFF")};
+export const MainTab = styled(NavLink)<{
+  selectedTab: boolean;
+  isMobile?: boolean;
+}>`
+  color: ${(props) =>
+    props.isMobile
+      ? props.selectedTab
+        ? "#89c33c"
+        : "#000000"
+      : props.selectedTab
+      ? "#000000"
+      : "#FFFFFF"};
   font-size: 1rem;
   font-weight: 500;
   line-height: 0.5rem;
   text-transform: uppercase;
-  cursor: pointer;
+  text-decoration: none;
 `;

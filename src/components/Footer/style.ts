@@ -36,6 +36,7 @@ export const MainTitle = styled.h2`
   text-transform: uppercase;
   font-size: 1rem;
   padding: 1rem 0;
+  text-align: center;
 
   @media screen and (min-width: 768px) {
     text-align: left;
@@ -47,6 +48,7 @@ export const MainTitle = styled.h2`
 export const MainNavigationTab = styled.ul`
   list-style-type: none;
   padding: 0;
+  text-align: center;
 
   @media screen and (min-width: 768px) {
     text-align: left;
