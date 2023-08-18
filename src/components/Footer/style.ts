@@ -1,8 +1,9 @@
 import { styled } from "styled-components";
 import { NavLink } from "react-router-dom";
+import { COLORS } from "../../theme/colors";
 
 export const FooterContainer = styled.footer`
-  background-color: #2f2f2f;
+  background-color: ${COLORS.lightBlack};
   overflow: hidden;
 
   & div {
@@ -15,11 +16,12 @@ export const GridContainer = styled.div<{
   isLastOne?: boolean;
 }>`
   height: 100%;
-  border-bottom: ${(props) => (props.isLastOne ? "none" : "1px solid #000000")};
+  border-bottom: ${(props) =>
+    props.isLastOne ? "none" : `1px solid ${COLORS.black}`};
 
   @media screen and (min-width: 768px) {
     border-bottom: none;
-    border-left: 1px solid #000000;
+    border-left: 1px solid ${COLORS.black};
     margin-left: ${(props) => (props.isFirstOne ? "8rem" : 0)};
   }
 
@@ -33,7 +35,7 @@ export const GridContainer = styled.div<{
 `;
 
 export const MainTitle = styled.h2`
-  color: #ffffff;
+  color: ${COLORS.white};
   text-transform: uppercase;
   font-size: 1rem;
   padding: 1rem 0;
@@ -64,5 +66,6 @@ export const NavigationTabList = styled.li`
 export const NavigationTab = styled(NavLink)<{ selectedTab?: boolean }>`
   text-decoration: none;
   text-transform: capitalize;
-  color: ${(props) => (props.selectedTab ? "#89c33c" : "#9f9696")};
+  color: ${(props) =>
+    props.selectedTab ? `${COLORS.green}` : `${COLORS.beige}`};
 `;

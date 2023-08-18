@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
 import { NavLink } from "react-router-dom";
+import { COLORS } from "../../theme/colors";
 
 export const BookCardContainer = styled(NavLink)`
   width: 100%;
@@ -20,7 +21,8 @@ export const BookTitle = styled.h4<{ hasBackground?: string }>`
   font-size: 1rem;
   margin: 0;
   text-align: left;
-  color: ${(props) => (props.hasBackground ? "#e7ecf1" : "#000000")};
+  color: ${(props) =>
+    props.hasBackground ? `${COLORS.gray}` : `${COLORS.black}`};
 `;
 
 export const BookDetails = styled.p<{ hasBackground?: string }>`
@@ -29,5 +31,6 @@ export const BookDetails = styled.p<{ hasBackground?: string }>`
   text-align: left;
   text-transform: uppercase;
   margin: 0;
-  color: ${(props) => (props.hasBackground ? "#89c33c" : "#000000")};
+  color: ${(props) =>
+    props.hasBackground ? `${COLORS.green}` : `${COLORS.black}`};
 `;

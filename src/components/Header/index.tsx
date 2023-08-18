@@ -15,6 +15,7 @@ import {
 } from "./style";
 
 import { PAGES } from "../../constants";
+import { COLORS } from "../../theme/colors";
 
 const Header: FC = () => {
   let location = useLocation();
@@ -31,7 +32,7 @@ const Header: FC = () => {
         <Menu opened={opened} onChange={setOpened}>
           <Menu.Target>
             <MenuButton>
-              <Menu2 size={30} strokeWidth={2} color="#FFFFFF" />
+              <Menu2 size={30} strokeWidth={2} color={COLORS.white} />
             </MenuButton>
           </Menu.Target>
 
@@ -68,7 +69,7 @@ const Header: FC = () => {
               </MainTab>
 
               {currentUrl === item.menuLink && (
-                <CaretDown size={10} strokeWidth={5} color="#000000" />
+                <CaretDown size={10} strokeWidth={5} color={COLORS.black} />
               )}
             </MainTabContainer>
           ))}
@@ -76,7 +77,7 @@ const Header: FC = () => {
       </HeaderContent>
 
       <div>
-        <Search size={20} strokeWidth={2} color="#FFFFFF" />
+        <Search size={20} strokeWidth={2} color={COLORS.white} />
       </div>
     </HeaderContainer>
   );

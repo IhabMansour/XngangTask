@@ -1,8 +1,9 @@
 import { styled } from "styled-components";
 import { NavLink } from "react-router-dom";
+import { COLORS } from "../../theme/colors";
 
 export const HeaderContainer = styled.header`
-  background: #89c33c;
+  background: ${COLORS.green};
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -35,12 +36,17 @@ export const MenuButton = styled.button`
 
 export const HeaderTitle = styled(NavLink)`
   text-decoration: none;
-  color: #ffffff;
+  color: ${COLORS.white};
+  font-size: 0.75rem;
   & h1 {
     margin: 0;
   }
   span {
     font-weight: 300;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 1.5rem;
   }
 `;
 
@@ -79,11 +85,11 @@ export const MainTab = styled(NavLink)<{
   color: ${(props) =>
     props.isMobile
       ? props.selectedTab
-        ? "#89c33c"
-        : "#000000"
+        ? `${COLORS.green}`
+        : `${COLORS.black}`
       : props.selectedTab
-      ? "#000000"
-      : "#FFFFFF"};
+      ? `${COLORS.black}`
+      : `${COLORS.white}`};
   font-size: 1rem;
   font-weight: 500;
   line-height: 0.5rem;

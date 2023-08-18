@@ -20,5 +20,6 @@ export const MainTitle = styled.h3`
   }
   @media screen and (min-width: 1024px) {
     text-align: left;
+    font-size: 2rem;
   }
 `;

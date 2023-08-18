@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { COLORS } from "../../theme/colors";
 
 export const FullBookDetailsContainer = styled.div`
   width: 100%;
@@ -18,7 +19,7 @@ export const ImageContainer = styled.img`
   height: 30rem;
   object-fit: contain;
   @media screen and (min-width: 992px) {
-    border-right: 1px solid #2f2f2f;
+    border-right: 1px solid ${COLORS.lightBlack};
   }
 `;
 
@@ -26,7 +27,7 @@ export const BookTitle = styled.h2`
   font-size: 2rem;
   margin: 0;
   text-align: center;
-  color: #89c33c;
+  color: ${COLORS.green};
 
   @media screen and (min-width: 992px) {
     text-align: left;
@@ -39,7 +40,7 @@ export const BookDetails = styled.p`
   opacity: 0.6;
   text-align: center;
   text-transform: capitalize;
-  color: #000000;
+  color: ${COLORS.black};
 
   @media screen and (min-width: 992px) {
     text-align: left;
