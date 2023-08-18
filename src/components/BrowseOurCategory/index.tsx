@@ -1,9 +1,9 @@
 import { FC, useEffect, useState } from "react";
 import { Grid } from "@mantine/core";
-import CategoryCard from "../CategoryCard";
+import CategoryCard from "@/components/CategoryCard";
 import { BrowseOurCategoryContainer, MainTitle } from "./style";
-import { CategoryProps } from "../../interfaces";
-import { getDataByParam } from "../../services";
+import { CategoryProps } from "@/interfaces/index";
+import { getDataByParam } from "@/services/index";
 
 const BrowseOurCategory: FC = () => {
   const [categoriesData, setCategoriesData] = useState<CategoryProps[]>([]);

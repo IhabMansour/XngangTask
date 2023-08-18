@@ -14,8 +14,8 @@ import {
   MobileMenuTab,
 } from "./style";
 
-import { PAGES } from "../../constants";
-import { COLORS } from "../../theme/colors";
+import { PAGES } from "@/constants/index";
+import { COLORS } from "@/theme/colors";
 
 const Header: FC = () => {
   let location = useLocation();

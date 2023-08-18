@@ -7,7 +7,7 @@ import {
   NavigationTab,
   NavigationTabList,
 } from "./style";
-import { BOOKS_CATEGORIES, PAGES } from "../../constants";
+import { BOOKS_CATEGORIES, PAGES } from "@/constants/index";
 import { Grid } from "@mantine/core";
 import { useLocation } from "react-router-dom";
 

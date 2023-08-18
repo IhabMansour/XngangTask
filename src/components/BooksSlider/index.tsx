@@ -1,6 +1,6 @@
 import { FC, useState, useEffect } from "react";
-import BookCard from "../BookCard";
-import { BooksSliderProps } from "../../interfaces";
+import BookCard from "@/components/BookCard";
+import { BooksSliderProps } from "@/interfaces/index";
 import { BooksSliderContainer, MainTitle } from "./style";
 import { Carousel } from "@mantine/carousel";
 import ControlIcon from "./ControlIcon";

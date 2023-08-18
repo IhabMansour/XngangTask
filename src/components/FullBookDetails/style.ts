@@ -1,5 +1,5 @@
 import { styled } from "styled-components";
-import { COLORS } from "../../theme/colors";
+import { COLORS } from "@/theme/colors";
 
 export const FullBookDetailsContainer = styled.div`
   width: 100%;

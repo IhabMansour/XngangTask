@@ -6,8 +6,8 @@ import {
   ImageContainer,
 } from "./style";
 import { Grid } from "@mantine/core";
-import { BookProps } from "../../interfaces";
-import { getDataByID } from "../../services";
+import { BookProps } from "@/interfaces/index";
+import { getDataByID } from "@/services/index";
 import { useLocation } from "react-router-dom";
 
 const FullBookDetails: FC = () => {

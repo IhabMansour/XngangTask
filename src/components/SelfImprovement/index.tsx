@@ -1,8 +1,8 @@
 import { FC, useEffect, useState } from "react";
-import { getDataByParam } from "../../services";
-import { BookProps } from "../../interfaces";
-import BooksSlider from "../BooksSlider";
-import MountainImage from "../../Images/mountain.jpg";
+import { getDataByParam } from "@/services/index";
+import { BookProps } from "@/interfaces/index";
+import BooksSlider from "@/components/BooksSlider";
+import MountainImage from "@/images/mountain.jpg";
 
 const SelfImprovement: FC = () => {
   const [selfImprovement, setSelfImprovement] = useState<BookProps[]>([]);

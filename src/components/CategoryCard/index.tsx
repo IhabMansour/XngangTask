@@ -5,7 +5,7 @@ import {
   CategoryCardContainer,
   ImageContainer,
 } from "./style";
-import { CategoryProps } from "../../interfaces";
+import { CategoryProps } from "@/interfaces/index";
 
 const CategoryCard: FC<CategoryProps> = ({ image, title, description }) => {
   return (

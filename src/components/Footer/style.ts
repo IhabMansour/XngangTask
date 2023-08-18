@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import { NavLink } from "react-router-dom";
-import { COLORS } from "../../theme/colors";
+import { COLORS } from "@/theme/colors";
 
 export const FooterContainer = styled.footer`
   background-color: ${COLORS.lightBlack};

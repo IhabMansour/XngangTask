@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 import { NavLink } from "react-router-dom";
-import { COLORS } from "../../theme/colors";
+import { COLORS } from "@/theme/colors";
 
 export const BookCardContainer = styled(NavLink)`
   width: 100%;
