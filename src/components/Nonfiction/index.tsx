@@ -12,7 +12,13 @@ const Nonfiction: FC = () => {
     });
   }, []);
 
-  return <BooksSlider mainTitle="nonfiction" booksData={nonfictionData} />;
+  return (
+    <BooksSlider
+      mainTitle="nonfiction"
+      booksData={nonfictionData}
+      booksCategory="nonfiction"
+    />
+  );
 };
 
 export default Nonfiction;

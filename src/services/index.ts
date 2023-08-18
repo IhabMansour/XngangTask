@@ -7,3 +7,11 @@ export const getDataByParam = (query: string) =>
       return data;
     })
     .catch((e) => console.log(e));
+
+export const getDataByID = (query: string, bookID: number) =>
+  fetch(`${url}/${query}/${bookID}`)
+    .then((res) => res.json())
+    .then((data) => {
+      return data;
+    })
+    .catch((e) => console.log(e));

@@ -3,14 +3,16 @@ import { BookCardContainer, BookDetails, BookTitle, ImageCard } from "./style";
 import { BookProps } from "../../interfaces";
 
 const BookCard: FC<BookProps> = ({
+  id,
   image,
   title,
   author,
   reviewedBy,
   hasBackground,
+  booksCategory,
 }) => {
   return (
-    <BookCardContainer>
+    <BookCardContainer to={`/books/${booksCategory}/${id}`}>
       <ImageCard src={image} />
 
       <BookTitle hasBackground={hasBackground}>{title}</BookTitle>

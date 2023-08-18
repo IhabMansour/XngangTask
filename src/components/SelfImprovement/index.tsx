@@ -18,6 +18,7 @@ const SelfImprovement: FC = () => {
       mainTitle="self improvement"
       booksData={selfImprovement}
       backgroundImage={MountainImage}
+      booksCategory="self_improvement"
     />
   );
 };

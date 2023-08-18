@@ -1,11 +1,13 @@
 import { styled } from "styled-components";
+import { NavLink } from "react-router-dom";
 
-export const BookCardContainer = styled.div`
+export const BookCardContainer = styled(NavLink)`
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
+  text-decoration: none;
 `;
 
 export const ImageCard = styled.img`

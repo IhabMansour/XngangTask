@@ -5,12 +5,14 @@ export interface BookProps {
   author: string;
   reviewedBy: string;
   hasBackground?: string;
+  booksCategory?: string;
 }
 
 export interface BooksSliderProps {
   mainTitle: string;
   booksData: BookProps[];
   backgroundImage?: string;
+  booksCategory?: string;
 }
 
 export interface CategoryProps {

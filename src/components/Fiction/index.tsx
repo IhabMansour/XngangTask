@@ -18,6 +18,7 @@ const Fiction: FC = () => {
       mainTitle="fiction"
       booksData={fictionData}
       backgroundImage={MoonImage}
+      booksCategory="fiction"
     />
   );
 };

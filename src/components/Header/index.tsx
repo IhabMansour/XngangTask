@@ -51,8 +51,10 @@ const Header: FC = () => {
       </MobileMenuTab>
 
       <HeaderContent>
-        <HeaderTitle>
-          Books<span>Reviews</span>
+        <HeaderTitle to="/">
+          <h1>
+            Books<span>Reviews</span>
+          </h1>
         </HeaderTitle>
 
         <DesktopMainTabs>

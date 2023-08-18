@@ -1,7 +1,8 @@
 import { FC } from "react";
+import FullBookDetails from "../components/FullBookDetails";
 
 const BookDetails: FC = () => {
-  return <div></div>;
+  return <FullBookDetails />;
 };
 
 export default BookDetails;

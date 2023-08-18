@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import {
   FooterContainer,
   GridContainer,
@@ -9,9 +9,15 @@ import {
 } from "./style";
 import { BOOKS_CATEGORIES, PAGES } from "../../constants";
 import { Grid } from "@mantine/core";
+import { useLocation } from "react-router-dom";
 
 const Footer: FC = () => {
-  const [currentUrl] = useState<string>(window.location.pathname);
+  const location = useLocation();
+  const [currentUrl, setCurrentUrl] = useState<string>(location.pathname);
+
+  useEffect(() => {
+    setCurrentUrl(location.pathname);
+  }, [location.pathname]);
 
   return (
     <FooterContainer>
@@ -24,7 +30,7 @@ const Footer: FC = () => {
                 <NavigationTabList key={page.menuID}>
                   <NavigationTab
                     selectedTab={currentUrl === page.menuLink}
-                    href={page.menuLink}>
+                    to={page.menuLink}>
                     {page.label}
                   </NavigationTab>
                 </NavigationTabList>
@@ -45,7 +51,7 @@ const Footer: FC = () => {
                         selectedTab={
                           currentUrl === `/books${category.childItemLink}`
                         }
-                        href={`/books${category.childItemLink}`}>
+                        to={`/books${category.childItemLink}`}>
                         {category.label}
                       </NavigationTab>
                     </NavigationTabList>
@@ -61,19 +67,19 @@ const Footer: FC = () => {
             <MainTitle>follow us</MainTitle>
             <MainNavigationTab>
               <NavigationTabList>
-                <NavigationTab href="https://www.facebook.com" target="_blank">
+                <NavigationTab to="https://www.facebook.com" target="_blank">
                   facebook
                 </NavigationTab>
               </NavigationTabList>
 
               <NavigationTabList>
-                <NavigationTab href="https://www.twitter.com" target="_blank">
+                <NavigationTab to="https://www.twitter.com" target="_blank">
                   twitter
                 </NavigationTab>
               </NavigationTabList>
 
               <NavigationTabList>
-                <NavigationTab href="https://www.rss.com" target="_blank">
+                <NavigationTab to="https://www.rss.com" target="_blank">
                   RSS
                 </NavigationTab>
               </NavigationTabList>

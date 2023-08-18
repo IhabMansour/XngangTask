@@ -12,7 +12,13 @@ const Children: FC = () => {
     });
   }, []);
 
-  return <BooksSlider mainTitle="children's" booksData={childrenData} />;
+  return (
+    <BooksSlider
+      mainTitle="children's"
+      booksData={childrenData}
+      booksCategory="children"
+    />
+  );
 };
 
 export default Children;

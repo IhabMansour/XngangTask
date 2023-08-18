@@ -23,6 +23,7 @@ const BooksSlider: FC<BooksSliderProps> = ({
   mainTitle,
   booksData,
   backgroundImage,
+  booksCategory,
 }) => {
   const [controlStyles, setControlStyles] = useState(
     getControlStyles(window.innerWidth)
@@ -64,11 +65,13 @@ const BooksSlider: FC<BooksSliderProps> = ({
           <Carousel.Slide>
             <BookCard
               key={book.id}
+              id={book.id}
               image={book.image}
               title={book.title}
               author={book.author}
               reviewedBy={book.reviewedBy}
               hasBackground={backgroundImage}
+              booksCategory={booksCategory}
             />
           </Carousel.Slide>
         ))}

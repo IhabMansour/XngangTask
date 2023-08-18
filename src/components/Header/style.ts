@@ -33,9 +33,12 @@ export const MenuButton = styled.button`
   padding: 0;
 `;
 
-export const HeaderTitle = styled.h1`
+export const HeaderTitle = styled(NavLink)`
+  text-decoration: none;
   color: #ffffff;
-  margin: 0;
+  & h1 {
+    margin: 0;
+  }
   span {
     font-weight: 300;
   }

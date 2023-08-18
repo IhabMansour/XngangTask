@@ -2,7 +2,7 @@ export const PAGES = [
   {
     menuID: "home",
     label: "home",
-    menuLink: "/home",
+    menuLink: "/",
   },
   {
     menuID: "books",

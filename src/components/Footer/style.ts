@@ -1,4 +1,5 @@
 import { styled } from "styled-components";
+import { NavLink } from "react-router-dom";
 
 export const FooterContainer = styled.footer`
   background-color: #2f2f2f;
@@ -60,7 +61,7 @@ export const NavigationTabList = styled.li`
   margin-bottom: 0.75rem;
 `;
 
-export const NavigationTab = styled.a<{ selectedTab?: boolean }>`
+export const NavigationTab = styled(NavLink)<{ selectedTab?: boolean }>`
   text-decoration: none;
   text-transform: capitalize;
   color: ${(props) => (props.selectedTab ? "#89c33c" : "#9f9696")};
