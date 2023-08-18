@@ -1,0 +1,88 @@
+import { FC, useState } from "react";
+import {
+  FooterContainer,
+  GridContainer,
+  MainNavigationTab,
+  MainTitle,
+  NavigationTab,
+  NavigationTabList,
+} from "./style";
+import { BOOKS_CATEGORIES, PAGES } from "../../constants";
+import { Grid } from "@mantine/core";
+
+const Footer: FC = () => {
+  const [currentUrl] = useState<string>(window.location.pathname);
+
+  return (
+    <FooterContainer>
+      <Grid m={0} align="stretch">
+        <Grid.Col p={0} sm={3} md={3}>
+          <GridContainer isFirstOne>
+            <MainTitle>navigation</MainTitle>
+            <MainNavigationTab>
+              {PAGES.map((page) => (
+                <NavigationTabList key={page.menuID}>
+                  <NavigationTab
+                    selectedTab={currentUrl === page.menuLink}
+                    href={page.menuLink}>
+                    {page.label}
+                  </NavigationTab>
+                </NavigationTabList>
+              ))}
+            </MainNavigationTab>
+          </GridContainer>
+        </Grid.Col>
+
+        <Grid.Col p={0} sm={6} md={6}>
+          <GridContainer>
+            <MainTitle>categories</MainTitle>
+            <MainNavigationTab>
+              <Grid m={0}>
+                {BOOKS_CATEGORIES.map((category) => (
+                  <Grid.Col key={category.childID} p={0} sm={6} md={4}>
+                    <NavigationTabList>
+                      <NavigationTab
+                        selectedTab={
+                          currentUrl === `/books${category.childItemLink}`
+                        }
+                        href={`/books${category.childItemLink}`}>
+                        {category.label}
+                      </NavigationTab>
+                    </NavigationTabList>
+                  </Grid.Col>
+                ))}
+              </Grid>
+            </MainNavigationTab>
+          </GridContainer>
+        </Grid.Col>
+
+        <Grid.Col p={0} sm={3} md={3}>
+          <GridContainer isLastOne>
+            <MainTitle>follow us</MainTitle>
+            <MainNavigationTab>
+              <NavigationTabList>
+                <NavigationTab href="https://www.facebook.com" target="_blank">
+                  facebook
+                </NavigationTab>
+              </NavigationTabList>
+
+              <NavigationTabList>
+                <NavigationTab href="https://www.twitter.com" target="_blank">
+                  twitter
+                </NavigationTab>
+              </NavigationTabList>
+
+              <NavigationTabList>
+                <NavigationTab href="https://www.rss.com" target="_blank">
+                  RSS
+                </NavigationTab>
+              </NavigationTabList>
+            </MainNavigationTab>
+          </GridContainer>
+        </Grid.Col>
+      </Grid>
+    </FooterContainer>
+  );
+};
+
+export default Footer;
