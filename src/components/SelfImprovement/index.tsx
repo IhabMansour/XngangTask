@@ -8,7 +8,7 @@ const SelfImprovement: FC = () => {
   const [selfImprovement, setSelfImprovement] = useState<BookProps[]>([]);
 
   useEffect(() => {
-    getDataByParam("self_improvement").then((data) => {
+    getDataByParam("self_improvement").then((data: BookProps[]) => {
       setSelfImprovement(data);
     });
   }, []);

@@ -15,3 +15,10 @@ export const NotCreatedYetContainer = styled.div`
     }
   }
 `;
+
+export const BooksPageContainer = styled.div<{ noData: boolean }>`
+  width: 100%;
+  display: ${(props) => (props.noData ? "flex" : "")};
+  justify-content: ${(props) => (props.noData ? "center" : "")};
+  align-items: ${(props) => (props.noData ? "center" : "")};
+`;

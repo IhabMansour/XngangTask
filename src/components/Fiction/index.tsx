@@ -8,7 +8,7 @@ const Fiction: FC = () => {
   const [fictionData, setFictionData] = useState<BookProps[]>([]);
 
   useEffect(() => {
-    getDataByParam("fiction").then((data) => {
+    getDataByParam("fiction").then((data: BookProps[]) => {
       setFictionData(data);
     });
   }, []);

@@ -38,7 +38,7 @@ const BooksSlider: FC<BooksSliderProps> = ({
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  return (
+  return !!booksData?.length ? (
     <BooksSliderContainer imageSrc={backgroundImage}>
       <MainTitle imageSrc={backgroundImage}>{mainTitle}</MainTitle>
 
@@ -77,6 +77,8 @@ const BooksSlider: FC<BooksSliderProps> = ({
         ))}
       </Carousel>
     </BooksSliderContainer>
+  ) : (
+    <></>
   );
 };
 

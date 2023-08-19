@@ -7,7 +7,7 @@ const Nonfiction: FC = () => {
   const [nonfictionData, setNonfictionData] = useState<BookProps[]>([]);
 
   useEffect(() => {
-    getDataByParam("nonfiction").then((data) => {
+    getDataByParam("nonfiction").then((data: BookProps[]) => {
       setNonfictionData(data);
     });
   }, []);

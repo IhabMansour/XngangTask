@@ -9,12 +9,12 @@ const BrowseOurCategory: FC = () => {
   const [categoriesData, setCategoriesData] = useState<CategoryProps[]>([]);
 
   useEffect(() => {
-    getDataByParam("categories").then((data) => {
+    getDataByParam("categories").then((data: CategoryProps[]) => {
       setCategoriesData(data);
     });
   }, []);
 
-  return (
+  return !!categoriesData?.length ? (
     <BrowseOurCategoryContainer>
       <MainTitle>
         Browse <span>our most popular category</span>
@@ -32,6 +32,8 @@ const BrowseOurCategory: FC = () => {
         ))}
       </Grid>
     </BrowseOurCategoryContainer>
+  ) : (
+    <></>
   );
 };
 

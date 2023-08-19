@@ -7,7 +7,7 @@ const Children: FC = () => {
   const [childrenData, setChildrenData] = useState<BookProps[]>([]);
 
   useEffect(() => {
-    getDataByParam("children").then((data) => {
+    getDataByParam("children").then((data: BookProps[]) => {
       setChildrenData(data);
     });
   }, []);
