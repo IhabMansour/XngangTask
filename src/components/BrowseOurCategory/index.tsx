@@ -20,7 +20,7 @@ const BrowseOurCategory: FC = () => {
         Browse <span>our most popular category</span>
       </MainTitle>
       <Grid>
-        {categoriesData?.map((category) => (
+        {categoriesData?.slice(0, 8)?.map((category) => (
           <Grid.Col md={6} lg={3}>
             <CategoryCard
               key={category.id}
