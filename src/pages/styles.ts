@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-export const NotCreatedYetContainer = styled.div`
+export const NotCreatedYetContainer = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,7 +16,7 @@ export const NotCreatedYetContainer = styled.div`
   }
 `;
 
-export const BooksPageContainer = styled.div<{ noData: boolean }>`
+export const BooksPageContainer = styled.section<{ noData: boolean }>`
   width: 100%;
   display: ${(props) => (props.noData ? "flex" : "")};
   justify-content: ${(props) => (props.noData ? "center" : "")};

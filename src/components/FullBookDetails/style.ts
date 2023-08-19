@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 import { COLORS } from "@/theme/colors";
 
-export const FullBookDetailsContainer = styled.div`
+export const FullBookDetailsContainer = styled.section`
   width: 100%;
   padding: 1rem;
 

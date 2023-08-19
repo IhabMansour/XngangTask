@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-export const BrowseOurCategoryContainer = styled.div`
+export const BrowseOurCategoryContainer = styled.section`
   padding: 1rem;
 
   @media screen and (min-width: 1024px) {

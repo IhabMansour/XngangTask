@@ -3,6 +3,10 @@ import { NavLink } from "react-router-dom";
 import { COLORS } from "@/theme/colors";
 
 export const HeaderContainer = styled.header`
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   background: ${COLORS.green};
   display: flex;
   justify-content: space-between;

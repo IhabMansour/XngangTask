@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 import { COLORS } from "@/theme/colors";
 
-export const BooksSliderContainer = styled.div<{ imageSrc?: string }>`
+export const BooksSliderContainer = styled.section<{ imageSrc?: string }>`
   padding: 1rem;
   background-image: ${(props) => `url(${props.imageSrc})`};
   background-size: cover;
