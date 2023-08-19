@@ -28,7 +28,7 @@ export const BookTitle = styled.h4<{ hasBackground?: string }>`
 export const BookDetails = styled.p<{ hasBackground?: string }>`
   font-size: 0.75rem;
   opacity: 0.7;
-  text-align: left;
+  text-align: center;
   text-transform: uppercase;
   margin: 0;
   color: ${(props) =>

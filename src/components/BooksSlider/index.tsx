@@ -78,7 +78,7 @@ const BooksSlider: FC<BooksSliderProps> = ({
       </Carousel>
     </BooksSliderContainer>
   ) : (
-    <></>
+    <h1>No Data!</h1>
   );
 };
 

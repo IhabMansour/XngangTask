@@ -25,7 +25,7 @@ export const HeaderContainer = styled.header`
 export const MobileMenuTab = styled.div`
   height: 1.5rem;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 850px) {
     display: none;
   }
 `;
@@ -61,7 +61,7 @@ export const HeaderContent = styled.div`
   align-items: center;
   padding: 0 1rem;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 850px) {
     justify-content: space-between;
     padding: 0 1rem 0 0;
   }
@@ -71,7 +71,7 @@ export const DesktopMainTabs = styled.nav`
   display: flex;
   gap: 1rem;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 850px) {
     display: none;
   }
 `;

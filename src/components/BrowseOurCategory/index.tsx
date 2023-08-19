@@ -33,7 +33,7 @@ const BrowseOurCategory: FC = () => {
       </Grid>
     </BrowseOurCategoryContainer>
   ) : (
-    <></>
+    <h1>No Data!</h1>
   );
 };
 
